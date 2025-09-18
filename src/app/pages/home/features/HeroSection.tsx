@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import JoinUsButton from '@/components/JoinUsButton'
+import Button from '@/components/Button'
 
 const HeroSection: React.FC = () => {
   return (
@@ -40,7 +40,12 @@ const HeroSection: React.FC = () => {
 
           {/* Join Us Button */}
           <div className="mt-8 sm:mt-10 md:mt-12">
-            <JoinUsButton />
+            <Button 
+              variant="joinUs"
+              text="Join Us"
+              action="joinUs"
+              onClick={(action) => console.log(`${action} button clicked`)}
+            />
           </div>
         </div>
       </div>
