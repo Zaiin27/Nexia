@@ -1,93 +1,93 @@
 import { DropdownSection, DropdownItem } from './types';
 
-// Services Dropdown Data - Desktop Mega Menu
 export const servicesData: DropdownSection[] = [
   {
     id: 'audit',
     title: 'Audit',
     items: [
-      { id: 'financial-statements', label: 'Financial Statements Audit', href: '/audit/financial-statements' },
-      { id: 'esg-assurance', label: 'ESG Assurance', href: '/audit/esg' }
+      { id: 'financial-statements', label: 'Financial Statements Audit', href: '/services/audit/financial-statements-audit' },
+      { id: 'esg-assurance', label: 'ESG Assurance', href: '/services/audit/esg-assurance' }
     ]
   },
   {
     id: 'business-services',
     title: 'Business Services',
     items: [
-      { id: 'accounting', label: 'Accounting and Bookkeeping', href: '/business/accounting' },
-      { id: 'company-establishment', label: 'Company Establishment', href: '/business/company-establishment' },
-      { id: 'company-secretarial', label: 'Company Secretarial Services', href: '/business/company-secretarial' },
-      { id: 'financial-reporting', label: 'Financial Reporting', href: '/business/financial-reporting' },
-      { id: 'payroll', label: 'Payroll', href: '/business/payroll' },
-      { id: 'tax-compliance', label: 'Tax Compliance Management', href: '/business/tax-compliance' }
+      { id: 'accounting', label: 'Accounting and Bookkeeping', href: '/services/business-services/accounting-bookkeeping' },
+      { id: 'company-establishment', label: 'Company Establishment', href: '/services/business-services/company-establishment' },
+      { id: 'company-secretarial', label: 'Company Secretarial Services', href: '/services/business-services/company-secretarial-services' },
+      { id: 'financial-reporting', label: 'Financial Reporting', href: '/services/business-services/financial-reporting' },
+      { id: 'payroll', label: 'Payroll', href: '/services/business-services/payroll' },
+      { id: 'tax-compliance', label: 'Tax Compliance Management', href: '/services/business-services/tax-compliance-management' }
     ]
   },
   {
     id: 'tax',
     title: 'Tax',
     items: [
-      { id: 'corporate-tax', label: 'Corporate Tax', href: '/tax/corporate' },
-      { id: 'global-mobility', label: 'Global Mobility Tax Services', href: '/tax/global-mobility' },
-      { id: 'indirect-taxes', label: 'Indirect Taxes', href: '/tax/indirect' },
-      { id: 'private-wealth', label: 'Private Wealth', href: '/tax/private-wealth' },
-      { id: 'transfer-pricing', label: 'Transfer Pricing', href: '/tax/transfer-pricing' }
+      { id: 'corporate-tax', label: 'Corporate Tax', href: '/services/tax/corporate-tax' },
+      { id: 'global-mobility', label: 'Global Mobility Tax Services', href: '/services/tax/global-mobility-tax-services' },
+      { id: 'indirect-taxes', label: 'Indirect Taxes', href: '/services/tax/indirect-taxes' },
+      { id: 'private-wealth', label: 'Private Wealth', href: '/services/tax/private-wealth' },
+      { id: 'transfer-pricing', label: 'Transfer Pricing', href: '/services/tax/transfer-pricing' }
     ]
   },
   {
     id: 'advisory',
     title: 'Advisory',
     items: [
-      { id: 'esg', label: 'ESG – Environment, Social and Governance', href: '/advisory/esg' },
-      { id: 'legal', label: 'Legal', href: '/advisory/legal' },
-      { id: 'mergers', label: 'Mergers & Acquisitions', href: '/advisory/mergers' },
-      { id: 'risk-advisory', label: 'Risk Advisory', href: '/advisory/risk' },
-      { id: 'transaction-services', label: 'Transaction Services', href: '/advisory/transaction' },
-      { id: 'turnaround', label: 'Turnaround Restructuring Insolvency', href: '/advisory/turnaround' },
-      { id: 'valuation', label: 'Valuation Services', href: '/advisory/valuation' }
+      { id: 'esg', label: 'ESG – Environment, Social and Governance', href: '/services/advisory/esg-environment-social-governance' },
+      { id: 'legal', label: 'Legal', href: '/services/advisory/legal' },
+      { id: 'mergers', label: 'Mergers & Acquisitions', href: '/services/advisory/mergers-acquisitions' },
+      { id: 'risk-advisory', label: 'Risk Advisory', href: '/services/advisory/risk-advisory' },
+      { id: 'transaction-services', label: 'Transaction Services', href: '/services/advisory/transaction-services' },
+      { id: 'turnaround', label: 'Turnaround Restructuring Insolvency', href: '/services/advisory/turnaround-restructuring-insolvency' }
     ]
   }
 ];
 
-// Services Mobile Dropdown Data
 export const servicesMobileData = [
   {
     id: 'audit',
     title: 'Audit',
     items: [
-      { id: 'financial-statements', label: 'Financial Statements Audit', href: '/audit/financial-statements' },
-      { id: 'pies', label: 'Audit of PIEs', href: '/audit/pies' },
-      { id: 'ifrs', label: 'International Financial Reporting Standards (IFRS)', href: '/audit/ifrs' },
-      { id: 'esg', label: 'ESG Assurance', href: '/audit/esg' }
+      { id: 'financial-statements', label: 'Financial Statements Audit', href: '/services/audit/financial-statements-audit' },
+      { id: 'esg', label: 'ESG Assurance', href: '/services/audit/esg-assurance' }
+    ]
+  },
+  {
+    id: 'business-services',
+    title: 'Business Services',
+    items: [
+      { id: 'accounting', label: 'Accounting and Bookkeeping', href: '/services/business-services/accounting-bookkeeping' },
+      { id: 'company-establishment', label: 'Company Establishment', href: '/services/business-services/company-establishment' },
+      { id: 'company-secretarial', label: 'Company Secretarial Services', href: '/services/business-services/company-secretarial-services' },
+      { id: 'financial-reporting', label: 'Financial Reporting', href: '/services/business-services/financial-reporting' },
+      { id: 'payroll', label: 'Payroll', href: '/services/business-services/payroll' },
+      { id: 'tax-compliance', label: 'Tax Compliance Management', href: '/services/business-services/tax-compliance-management' }
     ]
   },
   {
     id: 'tax',
     title: 'Tax',
     items: [
-      { id: 'corporate', label: 'Corporate Tax', href: '/tax/corporate' },
-      { id: 'personal', label: 'Personal Tax', href: '/tax/personal' },
-      { id: 'international', label: 'International Tax', href: '/tax/international' },
-      { id: 'planning', label: 'Tax Planning', href: '/tax/planning' }
-    ]
-  },
-  {
-    id: 'business',
-    title: 'Business Services',
-    items: [
-      { id: 'accounting', label: 'Accounting Services', href: '/business/accounting' },
-      { id: 'payroll', label: 'Payroll Services', href: '/business/payroll' },
-      { id: 'bookkeeping', label: 'Bookkeeping', href: '/business/bookkeeping' },
-      { id: 'company-secretarial', label: 'Company Secretarial Services', href: '/business/company-secretarial' }
+      { id: 'corporate-tax', label: 'Corporate Tax', href: '/services/tax/corporate-tax' },
+      { id: 'global-mobility', label: 'Global Mobility Tax Services', href: '/services/tax/global-mobility-tax-services' },
+      { id: 'indirect-taxes', label: 'Indirect Taxes', href: '/services/tax/indirect-taxes' },
+      { id: 'private-wealth', label: 'Private Wealth', href: '/services/tax/private-wealth' },
+      { id: 'transfer-pricing', label: 'Transfer Pricing', href: '/services/tax/transfer-pricing' }
     ]
   },
   {
     id: 'advisory',
     title: 'Advisory',
     items: [
-      { id: 'consulting', label: 'Business Consulting', href: '/advisory/consulting' },
-      { id: 'mergers', label: 'Mergers & Acquisitions', href: '/advisory/mergers' },
-      { id: 'risk', label: 'Risk Management', href: '/advisory/risk' },
-      { id: 'technology', label: 'Technology Advisory', href: '/advisory/technology' }
+      { id: 'esg', label: 'ESG – Environment, Social and Governance', href: '/services/advisory/esg-environment-social-governance' },
+      { id: 'legal', label: 'Legal', href: '/services/advisory/legal' },
+      { id: 'mergers', label: 'Mergers & Acquisitions', href: '/services/advisory/mergers-acquisitions' },
+      { id: 'risk-advisory', label: 'Risk Advisory', href: '/services/advisory/risk-advisory' },
+      { id: 'transaction-services', label: 'Transaction Services', href: '/services/advisory/transaction-services' },
+      { id: 'turnaround', label: 'Turnaround Restructuring Insolvency', href: '/services/advisory/turnaround-restructuring-insolvency' }
     ]
   }
 ];
@@ -291,3 +291,145 @@ export const colors = {
   black: '#000000',
   white: '#FFFFFF'
 } as const;
+
+// RelatedInsights Component Styles
+export const CARD_STYLES = {
+  container: "bg-white overflow-hidden transition-all duration-500 ease-in-out group rounded-[10px] shadow-[0_2px_8px_rgba(0,0,0,0.22)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.28)] hover:rounded-tl-[3rem] hover:rounded-br-[3rem] hover:rounded-tr-none hover:rounded-bl-none",
+  imageContainer: "relative h-52 w-[89%] mx-auto mt-5 mb-4 overflow-hidden rounded-[10px] group-hover:rounded-tl-[3rem] group-hover:rounded-br-[3rem] group-hover:rounded-tr-none group-hover:rounded-bl-none transition-all duration-500 ease-in-out",
+  image: "object-cover transition-all duration-300",
+  contentContainer: "p-8 pt-1",
+  title: "font-medium text-2xl text-gray-900 mb-2 line-clamp-2",
+  subtitle: "text-teal-500 text-md mt-1 mb-8"
+} as const;
+
+export const SECTION_STYLES = {
+  container: "py-12 bg-white",
+  wrapper: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+  header: "flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8",
+  title: "text-3xl font-bold text-teal-600 mb-4 sm:mb-0",
+  button: "bg-white text-teal-600 border-2 border-teal-600 px-6 py-3 rounded-lg font-medium hover:bg-teal-600 hover:text-white transition-colors duration-300 w-fit",
+  grid: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+} as const;
+
+// Services Cards Data for different pages
+export const servicesCardsData = {
+  'home': {
+    heading: "Personal connections, global solutions.",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1-3.jpg',
+        waveColor: 'from-blue-400 via-cyan-400 to-blue-500'
+      },
+      {
+        id: 'business-services',
+        title: 'Business Services',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/hero-teal-yellow-3.jpg',
+        waveColor: 'from-teal-400 via-cyan-400 to-orange-400'
+      }
+    ]
+  },
+  'financial-statements-audit': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1-3.jpg',
+        waveColor: 'from-blue-400 via-cyan-400 to-blue-500'
+      },
+      {
+        id: 'business-services',
+        title: 'Business Services',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/hero-teal-yellow-3.jpg',
+        waveColor: 'from-teal-400 via-cyan-400 to-orange-400'
+      }
+    ]
+  },
+  'esg-assurance': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'business-services',
+        title: 'Business Services',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/hero-teal-yellow-3.jpg',
+        waveColor: 'from-teal-400 via-cyan-400 to-orange-400'
+      }
+    ]
+  }
+  // Add more page-specific data as needed
+} as const;
+
+
+export const servicesDataSidebar = [
+  {
+    name: "Audit",
+    items: [
+      { name: "Financial Statements Audit", href: "/services/audit/financial-statements-audit" },
+      { name: "ESG Assurance", href: "/services/audit/esg-assurance" }
+    ]
+  },
+  {
+    name: "Business Services",
+    items: [
+      { name: "Accounting and Bookkeeping", href: "/services/business-services/accounting-bookkeeping" },
+      { name: "Company Establishment", href: "/services/business-services/company-establishment" },
+      { name: "Company Secretarial Services", href: "/services/business-services/company-secretarial-services" },
+      { name: "Financial Reporting", href: "/services/business-services/financial-reporting" },
+      { name: "Payroll", href: "/services/business-services/payroll" },
+      { name: "Tax Compliance Management", href: "/services/business-services/tax-compliance-management" }
+    ]
+  },
+  {
+    name: "Tax",
+    items: [
+      { name: "Corporate Tax", href: "/services/tax/corporate-tax" },
+      { name: "Global Mobility Tax Services", href: "/services/tax/global-mobility-tax-services" },
+      { name: "Indirect Taxes", href: "/services/tax/indirect-taxes" },
+      { name: "Private Wealth", href: "/services/tax/private-wealth" },
+      { name: "Transfer Pricing", href: "/services/tax/transfer-pricing" }
+    ]
+  },
+  {
+    name: "Advisory",
+    items: [
+      { name: "ESG – Environment, Social and Governance", href: "/services/advisory/esg-environment-social-governance" },
+      { name: "Legal", href: "/services/advisory/legal" },
+      { name: "Mergers & Acquisitions", href: "/services/advisory/mergers-acquisitions" },
+      { name: "Risk Advisory", href: "/services/advisory/risk-advisory" },
+      { name: "Transaction Services", href: "/services/advisory/transaction-services" },
+      { name: "Turnaround Restructuring Insolvency", href: "/services/advisory/turnaround-restructuring-insolvency" }
+    ]
+  }
+];

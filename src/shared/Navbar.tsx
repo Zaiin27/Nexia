@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from '@/components/Button'
 import { 
   NavbarProps, 
@@ -114,14 +115,16 @@ const Navbar: React.FC<NavbarProps> = () => {
           <div className="flex justify-between items-center h-28">
             {/* Logo Section */}
             <div className="flex items-center">
-              <Image
-                src={icons.logo}
-                alt="Nexia Logo"
-                width={220}
-                height={80}
-                className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto"
-                priority
-              />
+              <Link href="/" className="cursor-pointer">
+                <Image
+                  src={icons.logo}
+                  alt="Nexia Logo"
+                  width={220}
+                  height={80}
+                  className="h-8 sm:h-10 md:h-12 lg:h-16 w-auto"
+                  priority
+                />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -144,12 +147,12 @@ const Navbar: React.FC<NavbarProps> = () => {
             {/* Main Navigation Menu */}
             <nav className="flex items-center space-x-8">
               <div className="relative group">
-                <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
+                <div className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer hover:text-[#00B9B9]">
                   <span>Services</span>
                   <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
-                </button>
+                </div>
                 
                 {/* Mega Dropdown Menu */}
                 <div className="fixed top-28 left-50 w-3/4 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50">
@@ -163,16 +166,12 @@ const Navbar: React.FC<NavbarProps> = () => {
                             <ul className="space-y-2">
                               {section.items.map((item) => (
                                 <li key={item.id}>
-                                  <a 
+                                  <Link 
                                     href={item.href} 
                                     className="text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      handleLinkClick(item.href);
-                                    }}
                                   >
                                     {item.label}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -188,16 +187,12 @@ const Navbar: React.FC<NavbarProps> = () => {
                             <ul className="space-y-2">
                               {section.items.map((item) => (
                                 <li key={item.id}>
-                                  <a 
+                                  <Link 
                                     href={item.href} 
                                     className="text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                                    onClick={(e) => {
-                                      e.preventDefault();
-                                      handleLinkClick(item.href);
-                                    }}
                                   >
                                     {item.label}
-                                  </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -348,13 +343,15 @@ const Navbar: React.FC<NavbarProps> = () => {
             <div className="flex flex-col h-full">
               {/* Mobile Menu Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <Image
-                  src={icons.logo}
-                  alt="Nexia Logo"
-                  width={120}
-                  height={40}
-                  className="h-6 sm:h-8 w-auto"
-                />
+                <Link href="/" className="cursor-pointer" onClick={toggleMobileMenu}>
+                  <Image
+                    src={icons.logo}
+                    alt="Nexia Logo"
+                    width={120}
+                    height={40}
+                    className="h-6 sm:h-8 w-auto"
+                  />
+                </Link>
                 <button
                   onClick={toggleMobileMenu}
                   className="text-gray-500 hover:text-gray-700 transition-colors cursor-pointer"
@@ -370,19 +367,23 @@ const Navbar: React.FC<NavbarProps> = () => {
                 <nav className="p-6 space-y-1">
                   {/* Services Dropdown */}
                   <div>
-                    <button
-                      onClick={() => toggleDropdown('services')}
-                      className="w-full flex items-center justify-between py-3 text-left text-gray-900 hover:text-[#00B9B9] transition-colors cursor-pointer"
-                    >
-                      <span className="font-medium">Services</span>
-                      <svg 
-                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('services') ? 'rotate-180' : ''}`} 
-                        fill="currentColor" 
-                        viewBox="0 0 20 20"
+                    <div className="flex items-center justify-between">
+                      <div className="flex-1 py-3 text-left text-gray-900 hover:text-[#00B9B9] transition-colors cursor-pointer font-medium">
+                        Services
+                      </div>
+                      <button
+                        onClick={() => toggleDropdown('services')}
+                        className="p-3 text-[#00B9B9] hover:text-[#00B9B9] transition-colors cursor-pointer"
                       >
-                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </button>
+                        <svg 
+                          className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('services') ? 'rotate-180' : ''}`} 
+                          fill="currentColor" 
+                          viewBox="0 0 20 20"
+                        >
+                          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </button>
+                    </div>
                     {openDropdowns.has('services') && (
                       <div className="ml-4 space-y-1 mt-2">
                         {servicesMobileData.map((section) => (
@@ -404,17 +405,13 @@ const Navbar: React.FC<NavbarProps> = () => {
                               <ul className="space-y-1 ml-2 mt-1">
                                 {section.items.map((item) => (
                                   <li key={item.id}>
-                                    <a 
+                                    <Link 
                                       href={item.href} 
                                       className="block py-1 text-gray-700 hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                                      onClick={(e) => {
-                                        e.preventDefault();
-                                        handleLinkClick(item.href);
-                                        toggleMobileMenu();
-                                      }}
+                                      onClick={() => toggleMobileMenu()}
                                     >
                                       {item.label}
-                                    </a>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>

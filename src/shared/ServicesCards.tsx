@@ -9,44 +9,33 @@ interface ServiceCard {
   waveColor: string
 }
 
-const ServicesCards: React.FC = () => {
-  const services: ServiceCard[] = [
-    {
-      id: 'audit',
-      title: 'Audit',
-      image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
-      waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
-    },
-    {
-      id: 'tax',
-      title: 'Tax',
-      image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
-      waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
-    },
-    {
-      id: 'advisory',
-      title: 'Advisory',
-      image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1-3.jpg',
-      waveColor: 'from-blue-400 via-cyan-400 to-blue-500'
-    },
-    {
-      id: 'business-services',
-      title: 'Business Services',
-      image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/hero-teal-yellow-3.jpg',
-      waveColor: 'from-teal-400 via-cyan-400 to-orange-400'
-    }
-  ]
+interface ServicesCardsProps {
+  services: ServiceCard[]
+  heading?: string
+  showViewAllButton?: boolean
+}
+
+const ServicesCards: React.FC<ServicesCardsProps> = ({ services, heading = "Personal connections, global solutions.", showViewAllButton = true }) => {
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="pt-8 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
-        {/* Main Heading */}
-         <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-[#00323C] mb-16  text-left">
-          Personal connections, global solutions.
-        </h2>
+        {/* Main Heading with Button */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-16">
+          <h2 className="text-3xl md:text-3xl lg:text-4xl font-light text-[#00323C] text-left">
+            {heading}
+          </h2>
+          {showViewAllButton && (
+            <button className="bg-white text-teal-600 border-2 border-teal-600 px-6 py-3 rounded-lg font-medium hover:bg-teal-600 hover:text-white transition-colors duration-300 w-fit mt-4 sm:mt-0">
+              View all
+            </button>
+          )}
+        </div>
 
-        {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Services Cards Grid - Responsive for 3-4 cards */}
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${
+          services.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'
+        }`}>
           {services.map((service) => (
             <div
               key={service.id}

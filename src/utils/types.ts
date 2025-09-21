@@ -42,3 +42,17 @@ export interface NavigationData {
   industries: DropdownItem[];
   about: DropdownItem[];
 }
+
+export interface InsightCardProps {
+  image: string;
+  title: string;
+  subtitle: string;
+  category: string;
+}
+
+export interface RelatedInsightsProps {
+  title?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  insights: InsightCardProps[];
+}
