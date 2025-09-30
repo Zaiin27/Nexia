@@ -93,6 +93,14 @@ export default function DynamicServicesLayout({ children }: DynamicServicesLayou
   
   const backgroundImage = pathname === '/services/audit/financial-statements-audit' 
     ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg'
+    : pathname === '/services/audit/esg-assurance'
+    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg'
+    : pathname === '/services/tax/corporate-tax'
+    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg'
+    : pathname === '/services/tax/global-mobility-tax-services'
+    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg'
+    : pathname === '/services/tax/indirect-taxes'
+    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg'
     : undefined;
   
   return (
@@ -107,15 +115,15 @@ export default function DynamicServicesLayout({ children }: DynamicServicesLayou
         items={breadcrumbs}
       />
       
-      <div className="flex">
+      <div className="flex min-h-screen">
         {/* Sidebar - Hidden on small screens */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:block bg-white">
           <ServicesSidebar 
             categories={servicesDataSidebar}
           />
         </div>
         
-        <div className="flex-1 bg-white">
+        <div className="flex-1 bg-white pt-5">
           <div className="p-8">
             {children}
           </div>
@@ -130,7 +138,7 @@ export default function DynamicServicesLayout({ children }: DynamicServicesLayou
         if (pageData) {
           return (
             <>
-              <div className="w-full h-1 bg-gray-100"></div>
+              <div className="w-full border-b border-gray-200 bg-gray-100"></div>
               <RelatedInsights insights={relatedInsightsData} />
               <ServicesCards 
                 services={[...pageData.services]} 
