@@ -25,9 +25,9 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
         {/* Content Paragraphs */}
         {paragraphs.map((paragraph, index) => (
           <div key={index} className="mb-6">
-            <p className={`leading-relaxed ${
+            <p className={`leading-normal ${
               index === 0 
-                ? 'text-2xl text-gray-800 font-bold mb-4' 
+                ? 'text-2xl text-gray-800 font-semibold mb-4' 
                 : 'text-base text-gray-800'
             }`}>
               {paragraph}
@@ -45,7 +45,7 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
               company={chairCompany || ""}
               location={chairLocation || ""}
               image={chairImage}
-              buttonText="Contact"
+              buttonText="View Profile"
               buttonHref="#"
             />
           </div>

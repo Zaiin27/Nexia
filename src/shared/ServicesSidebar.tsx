@@ -34,7 +34,7 @@ const ServicesSidebar: React.FC<ServicesSidebarProps> = ({ categories }) => {
   };
 
   return (
-    <div className="w-80 bg-white border-r border-gray-200 min-h-screen">
+    <div className="w-80 bg-white border-r border-gray-200 h-full">
       <div className="p-6">
         <div className="space-y-1">
           {categories.map((category, categoryIndex) => (
@@ -44,8 +44,8 @@ const ServicesSidebar: React.FC<ServicesSidebarProps> = ({ categories }) => {
                 onClick={() => toggleCategory(category.name)}
                 className={`w-full flex items-center justify-between py-3 px-3 rounded-md transition-colors ${
                   openCategories.has(category.name) 
-                    ? 'bg-gray-100' 
-                    : 'hover:bg-gray-50'
+                    ? 'bg-white' 
+                    : 'hover:bg-white'
                 }`}
               >
                 <h3 className="text-base font-semibold text-gray-900 text-left">

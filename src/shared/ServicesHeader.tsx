@@ -11,14 +11,13 @@ const ServicesHeader: React.FC<ServicesHeaderProps> = ({ title, subtitle, backgr
   const isMainServicesPage = title === "Our Services";
   
   return (
-    <div className="bg-teal-600 text-white py-16 relative overflow-hidden">
+    <div className="bg-teal-600 text-white py-24 relative overflow-hidden">
       {/* Background Image or Pattern */}
       {backgroundImage ? (
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${backgroundImage})`,
-        
           }}
         />
       ) : (
