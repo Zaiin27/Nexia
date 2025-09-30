@@ -2,6 +2,11 @@
 export interface NavbarProps {
   // Add any props if needed in the future
 }
+export interface Industry {
+  id: string
+  name: string
+  image: string
+}
 
 export interface ButtonProps {
   id: string;
