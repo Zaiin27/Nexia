@@ -1,5 +1,11 @@
 import { DropdownSection, DropdownItem } from './types';
 
+export interface Industry {
+  id: string
+  name: string
+  image: string
+}
+
 export const servicesData: DropdownSection[] = [
   {
     id: 'audit',
@@ -433,3 +439,49 @@ export const servicesDataSidebar = [
     ]
   }
 ];
+
+
+
+
+export const industries: Industry[] = [
+  {
+    id: 'construction',
+    name: 'Construction',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/Construction-site-1024x682.jpg'
+  },
+  {
+    id: 'financial-services',
+    name: 'Financial Services',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/Manufacturing-1024x576.jpg'
+  },
+  {
+    id: 'manufacturing',
+    name: 'Manufacturing',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/12/Mining-Trucks-1024x540.jpg'
+  },
+  {
+    id: 'mining-natural-resources',
+    name: 'Mining, Natural Resources & Renewable Energy',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/new-york-united-states-of-america-1024x672.jpg'
+  },
+  {
+    id: 'real-estate',
+    name: 'Real Estate',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/Construction-site-1024x682.jpg'
+  },
+  {
+    id: 'retail',
+    name: 'Retail',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/new-york-united-states-of-america-1024x672.jpg'
+  },
+  {
+    id: 'healthcare',
+    name: 'Healthcare',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/Construction-site-1024x682.jpg'
+  },
+  {
+    id: 'technology',
+    name: 'Technology',
+    image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/new-york-united-states-of-america-1024x672.jpg'
+  }
+]
