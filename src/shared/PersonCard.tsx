@@ -22,7 +22,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
     <div className="bg-[#00323C] rounded-2xl shadow-lg overflow-hidden max-w-[330px] sm:max-w-[394px] min-h-[140px] sm:min-h-[160px]">
       <div className="flex h-full">
         {/* Image Section */}
-        <div className="w-28 h-28 sm:w-32 sm:h-36 flex-shrink-0 m-3 rounded-2xl">
+        <div className="w-28 h-24 sm:w-32 sm:h-36 flex-shrink-0 m-3 rounded-2xl">
           <Image
             src={image}
             alt={name}

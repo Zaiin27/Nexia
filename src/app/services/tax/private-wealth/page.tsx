@@ -1,85 +1,77 @@
 import React from 'react';
+import ServicePageTemplate from "@/shared/ServicePageTemplate";
+import PersonCard from "@/shared/PersonCard";
 
 const PrivateWealthPage = () => {
+  const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Tax", href: "/services/tax" },
+    { label: "Private Wealth" }
+  ];
+
+  const paragraphs = [
+    "Managing personal and business wealth requires careful planning and a tailored approach to ensure long-term financial success.",
+    "Nexia’s member firms offer a full range of services to help business owners, executives and individuals define their financial goals, maximise their assets and protect their wealth. By aligning with your priorities, we create bespoke strategies to ensure financial security for you, your family, and your business.",
+  ];
+
+  const taxServices = {
+    international: [
+      "Personal Tax Management: Efficiently managing tax liabilities to optimise financial outcomes",
+      "International Tax Planning: Strategic cross-border planning to navigate complex tax regulations", 
+      "Organisational Structure: Creating optimal business structures to support growth and tax efficiency",
+      "Family Trusts and Shareholder Agreements: Safeguarding wealth through family trusts and legal agreements",
+      "Employee Compensation and Benefits: Designing competitive employee packages while managing costs",
+      "Insurance and Fiduciary Services: Protecting assets through tailored insurance and fiduciary solutions",
+      "Retirement and Pensions Planning: Ensuring long-term financial security through comprehensive retirement strategies",
+      "Investment Strategy: Developing diversified investment portfolios to grow and preserve wealth",
+      "Corporate Finance and Debt Structuring: Supporting business growth through strategic financing and debt management",
+      "Estate and Succession Planning: Securing the future of your family and business through careful succession planning",
+      "Wills and Power of Attorney: Ensuring your wishes are respected and legal matters are managed effectively"
+    ]
+  };
+
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Private Wealth</h1>
-        <p className="text-xl text-gray-600">
-          Comprehensive tax planning and compliance services for high-net-worth individuals, families, and private clients.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-        <div>
-          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Our Services</h2>
-          <ul className="space-y-3 text-gray-700">
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Personal tax planning
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Estate and inheritance planning
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Trust and foundation services
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Investment tax optimization
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              International tax compliance
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Family office services
-            </li>
+    <div>
+      <ServicePageTemplate
+        breadcrumbs={breadcrumbs}
+        paragraphs={paragraphs}
+      />
+      
+      {/* Tax Services Lists */}
+      <div className="max-w-4xl mt-5">
+        {/* Nexia's Services */}
+        <div className="mb-5">
+          <p className="text-gray-700">Nexia's services include:</p>
+          <ul className="space-y-2 md:ml-10 mt-4">
+            {taxServices.international.map((service, index) => {
+              const [title, description] = service.split(': ');
+              return (
+                <li key={index} className="flex items-start">
+                  <span className="text-teal-600 mr-2">•</span>
+                  <span className="text-gray-700">
+                    <span className="font-bold">{title}:</span> {description}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
-
-        <div>
-          <h2 className="text-2xl font-semibold text-teal-600 mb-4">Why Choose Our Private Wealth Services</h2>
-          <ul className="space-y-3 text-gray-700">
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Personalized approach
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Comprehensive tax strategies
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Wealth preservation
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Multi-generational planning
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Confidentiality and discretion
-            </li>
-            <li className="flex items-start">
-              <span className="text-teal-600 mr-2">•</span>
-              Expert team of specialists
-            </li>
-          </ul>
-        </div>
+      
       </div>
-
-      <div className="bg-teal-50 rounded-lg p-6">
-        <h2 className="text-2xl font-semibold text-teal-600 mb-4">Secure Your Wealth Legacy</h2>
-        <p className="text-gray-700 mb-4">
-          Our private wealth experts provide sophisticated tax planning solutions to help preserve and grow your wealth across generations.
-        </p>
-        <button className="bg-teal-600 text-white px-6 py-3 rounded hover:bg-teal-700 transition-colors">
-          Schedule Consultation
-        </button>
+      
+      {/* Chair Section */}
+      <div className="max-w-4xl mt-8">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Chair(s)</h2>
+        
+        <PersonCard
+          name="Clare Cromwell"
+          company="Nexia Shaffery"
+          location="United Kingdom"
+          image="https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/01/clare-cromwell.jpg"
+          buttonText="View Profile"
+          buttonHref="#"
+        />
       </div>
     </div>
   );

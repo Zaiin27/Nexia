@@ -2,26 +2,25 @@ import React from 'react';
 import ServicePageTemplate from "@/shared/ServicePageTemplate";
 import PersonCard from "@/shared/PersonCard";
 
-const AccountingBookkeepingPage = () => {
+const CompanySecretarialServicesPage = () => {
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "Business Services", href: "/services/business-services" },
-    { label: "Accounting and Bookkeeping" }
+    { label: "Company Secretarial Services" }
   ];
 
   const paragraphs = [
-    "Outsourcing your accounting and bookkeeping to a Nexia member firm offers significant benefits to your business.",
-    "By leveraging advanced accounting software and tools, our members ensure accuracy, compliance with regulatory requirements and real-time access to financial data.",
+    "Outsourcing company secretarial services ensures accuracy and compliance with legal requirements, reducing the risk of penalties or legal complications.",
   ];
 
   const taxServices = {
     international: [
-      "Preparing and maintaining accurate financial records",
-      "Managing accounts payable and receivable", 
-      "Reconciling bank statements",
-      "Financial reporting and analysis",
-      "Budgeting and forecasting"
+      "Maintaining company records",
+      "Preparing and filing annual returns", 
+      "Managing board and shareholder meetings",
+      "Drafting resolutions",
+      "Ensuring compliance with corporate governance"
     ]
   };
 
@@ -36,16 +35,13 @@ const AccountingBookkeepingPage = () => {
       <div className="max-w-4xl mt-5">
         {/* Nexia's Services */}
         <div className="mb-5">
-          <p className="text-gray-700">Nexia's services include:</p>
+          <p className="text-gray-700">Nexia's solutions include:</p>
           <ul className="space-y-2 md:ml-10 mt-4">
             {taxServices.international.map((service, index) => {
-              const [title, description] = service.split(': ');
               return (
                 <li key={index} className="flex items-start">
                   <span className="text-teal-600 mr-2">•</span>
-                  <span className="text-gray-700">
-                    <span className="">{title}:</span> {description}
-                  </span>
+                  <span className="text-gray-700">{service}</span>
                 </li>
               );
             })}
@@ -55,7 +51,7 @@ const AccountingBookkeepingPage = () => {
         {/* Contact Information */}
         <div className="mt-2 pt-2 md:pt-0 md:mt-0">
           <p className="text-gray-700">
-          One of the key advantages for outsourcing is cost-effectiveness. By engaging a Nexia member firm you eliminate the need to hire, train and maintain an in-house accounting team, reducing overhead expenses. Our firms bring expertise and up-to-date knowledge of tax laws, regulations and best practices, minimising errors and ensuring compliance.
+            Professional support helps businesses streamline administrative tasks, maintain up-to-date records and stay focused on core operations. Additionally, with their expertise in corporate governance, Nexia members provide valuable advice to safeguard the company's reputation and ensure transparency, which is critical for long-term success.
           </p>
         </div>
 
@@ -78,4 +74,4 @@ const AccountingBookkeepingPage = () => {
   );
 };
 
-export default AccountingBookkeepingPage;
+export default CompanySecretarialServicesPage;
