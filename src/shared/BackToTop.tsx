@@ -34,7 +34,7 @@ const BackToTop: React.FC = () => {
     <div className="flex justify-center py-8 bg-white">
       <button
         onClick={scrollToTop}
-        className="flex flex-col items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors duration-300 group cursor-pointer"
+        className="flex flex-col items-center gap-2 text-black hover:text-teal-700 transition-colors duration-300 group cursor-pointer"
         aria-label="Back to top"
       >
         {/* Arrow Icon - First Row */}
@@ -47,7 +47,7 @@ const BackToTop: React.FC = () => {
         </div>
         
         {/* Text - Second Row */}
-        <span className="text-teal-600 font-medium">Back to top</span>
+        <span className="text-black font-normal text-2xl">Back to top</span>
       </button>
     </div>
   )

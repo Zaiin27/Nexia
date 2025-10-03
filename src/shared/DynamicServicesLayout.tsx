@@ -8,6 +8,7 @@ import ServicesCards from "@/shared/ServicesCards";
 import BackToTop from "@/shared/BackToTop";
 import { relatedInsightsData } from "@/data/relatedInsights";
 import { servicesDataSidebar, servicesCardsData } from "@/utils/constants";
+import { getBackgroundImage } from "@/utils/backgroundHeaders";
 
 
 
@@ -91,17 +92,7 @@ export default function DynamicServicesLayout({ children }: DynamicServicesLayou
   const { title, subtitle } = getServiceNameFromPath(pathname);
   const breadcrumbs = getBreadcrumbsFromPath(pathname);
   
-  const backgroundImage = pathname === '/services/audit/financial-statements-audit' 
-    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg'
-    : pathname === '/services/audit/esg-assurance'
-    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg'
-    : pathname === '/services/tax/corporate-tax'
-    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg'
-    : pathname === '/services/tax/global-mobility-tax-services'
-    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg'
-    : pathname === '/services/tax/indirect-taxes'
-    ? 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg'
-    : undefined;
+  const backgroundImage = getBackgroundImage(pathname);
   
   return (
     <div className="min-h-screen bg-gray-50">

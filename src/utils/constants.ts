@@ -462,6 +462,190 @@ export const servicesCardsData = {
         waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
       }
     ]
+  },
+  'private-wealth': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'business-services',
+        title: 'Business Services',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/hero-teal-yellow-3.jpg',
+        waveColor: 'from-teal-400 via-cyan-400 to-orange-400'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'transfer-pricing': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'business-services',
+        title: 'Business Services',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/hero-teal-yellow-3.jpg',
+        waveColor: 'from-teal-400 via-cyan-400 to-orange-400'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'accounting-bookkeeping': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'company-establishment': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'company-secretarial-services': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'financial-reporting': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'payroll': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
+  },
+  'tax-compliance-management': {
+    heading: "Other Services",
+    services: [
+      {
+        id: 'audit',
+        title: 'Audit',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/audit-1.jpg',
+        waveColor: 'from-yellow-400 via-orange-400 to-yellow-500'
+      },
+      {
+        id: 'tax',
+        title: 'Tax',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/tax1.jpg',
+        waveColor: 'from-pink-400 via-magenta-400 to-pink-500'
+      },
+      {
+        id: 'advisory',
+        title: 'Advisory',
+        image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/08/advisory-1.jpg',
+        waveColor: 'from-purple-400 via-indigo-400 to-purple-500'
+      }
+    ]
   }
   // Add more page-specific data as needed
 } as const;
