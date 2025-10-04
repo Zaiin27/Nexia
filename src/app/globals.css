@@ -1,1 +1,69 @@
 @import "tailwindcss";
+
+/* CSS Custom Properties for Theme Colors - Dynamic from environment */
+:root {
+    --color-primary: #00B9B9;
+    --color-primary-dark: #008B8B;
+    --color-primary-light: #20C9C9;
+    --color-secondary: #F59E0B;
+    --color-accent: #10B981;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6B7280;
+    --color-text-light: #9CA3AF;
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #F9FAFB;
+    --color-bg-dark: #1F2937;
+}
+
+/* Utility classes for theme colors */
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-primary-dark {
+    color: var(--color-primary-dark);
+}
+
+.text-primary-light {
+    color: var(--color-primary-light);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-primary-dark {
+    background-color: var(--color-primary-dark);
+}
+
+.bg-primary-light {
+    background-color: var(--color-primary-light);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.bg-accent {
+    background-color: var(--color-accent);
+}
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+.border-primary-dark {
+    border-color: var(--color-primary-dark);
+}
+
+.border-primary-light {
+    border-color: var(--color-primary-light);
+}

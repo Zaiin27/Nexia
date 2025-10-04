@@ -18,7 +18,7 @@ const AccountingBookkeepingPage = () => {
   const taxServices = {
     international: [
       "Preparing and maintaining accurate financial records",
-      "Managing accounts payable and receivable", 
+      "Managing accounts payable and receivable",
       "Reconciling bank statements",
       "Financial reporting and analysis",
       "Budgeting and forecasting"
@@ -31,7 +31,7 @@ const AccountingBookkeepingPage = () => {
         breadcrumbs={breadcrumbs}
         paragraphs={paragraphs}
       />
-      
+
       {/* Tax Services Lists */}
       <div className="max-w-4xl mt-5">
         {/* Nexia's Services */}
@@ -51,20 +51,20 @@ const AccountingBookkeepingPage = () => {
             })}
           </ul>
         </div>
- 
+
         {/* Contact Information */}
         <div className="mt-2 pt-2 md:pt-0 md:mt-0">
           <p className="text-gray-700">
-          One of the key advantages for outsourcing is cost-effectiveness. By engaging a Nexia member firm you eliminate the need to hire, train and maintain an in-house accounting team, reducing overhead expenses. Our firms bring expertise and up-to-date knowledge of tax laws, regulations and best practices, minimising errors and ensuring compliance.
+            One of the key advantages for outsourcing is cost-effectiveness. By engaging a Nexia member firm you eliminate the need to hire, train and maintain an in-house accounting team, reducing overhead expenses. Our firms bring expertise and up-to-date knowledge of tax laws, regulations and best practices, minimising errors and ensuring compliance.
           </p>
         </div>
 
       </div>
-      
+
       {/* Chair Section */}
       <div className="max-w-4xl mt-8">
         <h2 className="text-2xl font-semibold text-gray-900 mb-6">Chair(s)</h2>
-        
+
         <PersonCard
           name="Sophocles Kleovoulou"
           company="Cape Town - Nexia SAB&T"
