@@ -1,16 +1,17 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import Button from '@/components/Button'
-import {
-  NavbarProps,
-  ButtonClickHandler,
-  LinkClickHandler
+import { 
+  NavbarProps, 
+  ButtonClickHandler, 
+  LinkClickHandler 
 } from '@/utils/types'
-import {
-  mainNavigationLinks,
-  actionButtons,
+import { 
+  mainNavigationLinks, 
+  actionButtons, 
   icons,
   servicesData,
   insightsData,
@@ -23,13 +24,19 @@ import {
 } from '@/utils/constants'
 
 const Navbar: React.FC<NavbarProps> = () => {
+  const [mounted, setMounted] = useState<boolean>(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set())
   const [openSubDropdowns, setOpenSubDropdowns] = useState<Set<string>>(new Set())
+  const router = useRouter()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
-    setOpenDropdowns(new Set())
+    setOpenDropdowns(new Set()) 
     setOpenSubDropdowns(new Set()) // Close all sub-dropdowns when toggling menu
   }
 
@@ -62,15 +69,45 @@ const Navbar: React.FC<NavbarProps> = () => {
   // Event handlers
   const handleButtonClick: ButtonClickHandler = (action: string): void => {
     console.log(`${action} button clicked`);
-    // Add your button click logic here
   }
 
   const handleLinkClick: LinkClickHandler = (href: string): void => {
     console.log(`Navigating to: ${href}`);
-
+    router.push(href);
   }
 
-
+  if (!mounted) {
+    return (
+      <header className="bg-white shadow-sm">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-28">
+            {/* Logo Section - Placeholder for SSR */}
+            <div className="flex items-center">
+              <div className="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+            </div>
+            {/* Right Section - Placeholder for SSR */}
+            <div className="flex flex-col items-end space-y-3">
+              <div className="flex items-center space-x-3">
+                <div className="h-8 w-16 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-8 w-24 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-8 w-32 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-8 w-28 bg-gray-200 animate-pulse rounded"></div>
+              </div>
+              <div className="flex items-center space-x-8">
+                <div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-4 w-12 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-4 w-16 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-4 w-20 bg-gray-200 animate-pulse rounded"></div>
+                <div className="h-5 w-5 bg-gray-200 animate-pulse rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    )
+  }
 
   return (
     <>
@@ -93,190 +130,194 @@ const Navbar: React.FC<NavbarProps> = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex flex-col items-end space-y-6">
-              {/* Top Action Buttons */}
-              <div className="flex items-center space-x-3">
-                {actionButtons.map((button) => (
-                  <Button
-                    key={button.id}
-                    id={button.id}
-                    label={button.label}
-                    icon={button.icon}
-                    action={button.action}
-                    isHighlighted={button.isHighlighted}
-                    onClick={handleButtonClick}
-                  />
-                ))}
-              </div>
+            {/* Top Action Buttons */}
+            <div className="flex items-center space-x-3">
+              {actionButtons.map((button) => (
+                <Button
+                  key={button.id}
+                  id={button.id}
+                  label={button.label}
+                  icon={button.icon}
+                  action={button.action}
+                  isHighlighted={button.isHighlighted}
+                  onClick={handleButtonClick}
+                />
+              ))}
+            </div>
 
-              {/* Main Navigation Menu */}
-              <nav className="flex items-center space-x-8">
-                <div className="relative group">
-                  <div className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer hover:text-[#00B9B9]">
-                    <span>Services</span>
-                    <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-
-                  {/* Mega Dropdown Menu */}
-                  <div className="fixed top-28 left-50 w-3/4 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50">
-                    <div className="px-8 py-4">
-                      <div className="grid grid-cols-2 gap-8">
-                        {/* Left Column */}
-                        <div className="space-y-6">
-                          {servicesData.slice(0, 2).map((section) => (
-                            <div key={section.id} className={section.id === 'business-services' ? 'lg:mt-[8rem]' : ''}>
-                              <h3 className="text-[#00B9B9] font-semibold text-lg mb-3">{section.title}</h3>
-                              <ul className="space-y-2">
-                                {section.items.map((item) => (
-                                  <li key={item.id}>
-                                    <Link
-                                      href={item.href}
-                                      className="text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                                    >
-                                      {item.label}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Right Column */}
-                        <div className="space-y-6">
-                          {servicesData.slice(2).map((section) => (
-                            <div key={section.id}>
-                              <h3 className="text-[#00B9B9] font-semibold text-lg mb-3">{section.title}</h3>
-                              <ul className="space-y-2">
-                                {section.items.map((item) => (
-                                  <li key={item.id}>
-                                    <Link
-                                      href={item.href}
-                                      className="text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                                    >
-                                      {item.label}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
+            {/* Main Navigation Menu */}
+            <nav className="flex items-center space-x-8">
+              <div className="relative group">
+                <div className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer hover:text-[#00B9B9]">
+                  <span>Services</span>
+                  <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                
+                {/* Mega Dropdown Menu */}
+                <div className="fixed top-28 left-50 w-3/4 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50">
+                  <div className="px-8 py-4">
+                    <div className="grid grid-cols-2 gap-8">
+                      {/* Left Column */}
+                      <div className="space-y-6">
+                        {servicesData.slice(0, 2).map((section) => (
+                          <div key={section.id} className={section.id === 'business-services' ? 'lg:mt-[8rem]' : ''}>
+                            <h3 className="text-[#00B9B9] font-semibold text-lg mb-3">{section.title}</h3>
+                            <ul className="space-y-2">
+                              {section.items.map((item) => (
+                                <li key={item.id}>
+                                  <Link 
+                                    href={item.href} 
+                                    className="text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
+                                  >
+                                    {item.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      {/* Right Column */}
+                      <div className="space-y-6">
+                        {servicesData.slice(2).map((section) => (
+                          <div key={section.id}>
+                            <h3 className="text-[#00B9B9] font-semibold text-lg mb-3">{section.title}</h3>
+                            <ul className="space-y-2">
+                              {section.items.map((item) => (
+                                <li key={item.id}>
+                                  <Link 
+                                    href={item.href} 
+                                    className="text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
+                                  >
+                                    {item.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="relative group">
-                  <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
-                    <span>Insights</span>
-                    <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-
-                  {/* Insights Dropdown Menu */}
-                  <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 min-w-48 py-2">
-                    <ul className="space-y-1">
-                      {insightsData.map((item) => (
-                        <li key={item.id}>
-                          <Link
-                            href={item.href}
-                            className="block px-4 py-2 text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="relative group">
-                  <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
-                    <span>Industries</span>
-                    <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-
-                  {/* Industries Dropdown Menu */}
-                  <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 min-w-48 py-2">
-                    <ul className="space-y-1">
-                      {industriesData.map((item) => (
-                        <li key={item.id}>
-                          <a
-                            href={item.href}
-                            className="block px-4 py-2 text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleLinkClick(item.href);
-                            }}
-                          >
-                            {item.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="relative group">
-                  <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
-                    <span>About</span>
-                    <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-
-                  {/* About Dropdown Menu */}
-                  <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 min-w-48 py-2">
-                    <ul className="space-y-1">
-                      {aboutData.map((item) => (
-                        <li key={item.id}>
-                          <a
-                            href={item.href}
-                            className="block px-4 py-2 text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              handleLinkClick(item.href);
-                            }}
-                          >
-                            {item.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {mainNavigationLinks.map((link) => (
-                  <a
-                    key={link.id}
-                    href={link.href}
-                    className="text-black font-normal text-base leading-6 transition-colors cursor-pointer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleLinkClick(link.href);
-                    }}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-
-                <button
-                  className="text-[#00B9B9] hover:text-teal-600 transition-colors cursor-pointer"
-                  onClick={() => handleButtonClick('Search')}
-                >
-                  <img src={icons.search} alt="Search" className="w-5 h-5" />
+              <div className="relative group">
+                <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
+                  <span>Insights</span>
+                  <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
                 </button>
-              </nav>
+                
+                {/* Insights Dropdown Menu */}
+                <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 min-w-48 py-2">
+                  <ul className="space-y-1">
+                    {insightsData.map((item) => (
+                      <li key={item.id}>
+                        <a 
+                          href={item.href} 
+                          className="block px-4 py-2 text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleLinkClick(item.href);
+                          }}
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
+                  <span>Industries</span>
+                  <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                
+                {/* Industries Dropdown Menu */}
+                <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 min-w-48 py-2">
+                  <ul className="space-y-1">
+                    {industriesData.map((item) => (
+                      <li key={item.id}>
+                        <a 
+                          href={item.href} 
+                          className="block px-4 py-2 text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleLinkClick(item.href);
+                          }}
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="relative group">
+                <button className="text-black font-normal text-base leading-6 flex items-center space-x-1 transition-colors cursor-pointer">
+                  <span>About</span>
+                  <svg className="w-5 h-5 text-[#00B9B9] mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+                
+                {/* About Dropdown Menu */}
+                <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 min-w-48 py-2">
+                  <ul className="space-y-1">
+                    {aboutData.map((item) => (
+                      <li key={item.id}>
+                        <a 
+                          href={item.href} 
+                          className="block px-4 py-2 text-black hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleLinkClick(item.href);
+                          }}
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {mainNavigationLinks.map((link) => (
+                <a 
+                  key={link.id}
+                  href={link.href} 
+                  className="text-black font-normal text-base leading-6 transition-colors cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(link.href);
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              <button 
+                className="text-[#00B9B9] hover:text-teal-600 transition-colors cursor-pointer"
+                onClick={() => handleButtonClick('Search')}
+              >
+                <img src={icons.search} alt="Search" className="w-5 h-5" />
+              </button>
+            </nav>
             </div>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center space-x-4">
-              <button
+              <button 
                 className="text-[#00B9B9] hover:text-teal-600 transition-colors cursor-pointer"
                 onClick={() => handleButtonClick('Search')}
               >
@@ -335,9 +376,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                         onClick={() => toggleDropdown('services')}
                         className="p-3 text-[#00B9B9] hover:text-[#00B9B9] transition-colors cursor-pointer"
                       >
-                        <svg
-                          className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('services') ? 'rotate-180' : ''}`}
-                          fill="currentColor"
+                        <svg 
+                          className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('services') ? 'rotate-180' : ''}`} 
+                          fill="currentColor" 
                           viewBox="0 0 20 20"
                         >
                           <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -353,9 +394,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                               className="w-full flex items-center justify-between py-2 text-left text-[#00B9B9] font-semibold text-sm hover:text-[#00B9B9] transition-colors cursor-pointer"
                             >
                               <span>{section.title}</span>
-                              <svg
-                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`}
-                                fill="currentColor"
+                              <svg 
+                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`} 
+                                fill="currentColor" 
                                 viewBox="0 0 20 20"
                               >
                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -365,8 +406,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                               <ul className="space-y-1 ml-2 mt-1">
                                 {section.items.map((item) => (
                                   <li key={item.id}>
-                                    <Link
-                                      href={item.href}
+                                    <Link 
+                                      href={item.href} 
                                       className="block py-1 text-gray-700 hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
                                       onClick={() => toggleMobileMenu()}
                                     >
@@ -389,9 +430,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                       className="w-full flex items-center justify-between py-3 text-left text-gray-900 hover:text-[#00B9B9] transition-colors cursor-pointer"
                     >
                       <span className="font-medium">Insights</span>
-                      <svg
-                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('insights') ? 'rotate-180' : ''}`}
-                        fill="currentColor"
+                      <svg 
+                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('insights') ? 'rotate-180' : ''}`} 
+                        fill="currentColor" 
                         viewBox="0 0 20 20"
                       >
                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -406,9 +447,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                               className="w-full flex items-center justify-between py-2 text-left text-[#00B9B9] font-semibold text-sm hover:text-[#00B9B9] transition-colors cursor-pointer"
                             >
                               <span>{section.title}</span>
-                              <svg
-                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`}
-                                fill="currentColor"
+                              <svg 
+                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`} 
+                                fill="currentColor" 
                                 viewBox="0 0 20 20"
                               >
                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -418,15 +459,17 @@ const Navbar: React.FC<NavbarProps> = () => {
                               <ul className="space-y-1 ml-2 mt-1">
                                 {section.items.map((item) => (
                                   <li key={item.id}>
-                                    <Link
-                                      href={item.href}
+                                    <a 
+                                      href={item.href} 
                                       className="block py-1 text-gray-700 hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
-                                      onClick={() => {
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        handleLinkClick(item.href);
                                         toggleMobileMenu();
                                       }}
                                     >
                                       {item.label}
-                                    </Link>
+                                    </a>
                                   </li>
                                 ))}
                               </ul>
@@ -443,9 +486,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                       className="w-full flex items-center justify-between py-3 text-left text-gray-900 hover:text-[#00B9B9] transition-colors cursor-pointer"
                     >
                       <span className="font-medium">Industries</span>
-                      <svg
-                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('industries') ? 'rotate-180' : ''}`}
-                        fill="currentColor"
+                      <svg 
+                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('industries') ? 'rotate-180' : ''}`} 
+                        fill="currentColor" 
                         viewBox="0 0 20 20"
                       >
                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -460,9 +503,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                               className="w-full flex items-center justify-between py-2 text-left text-[#00B9B9] font-semibold text-sm hover:text-[#00B9B9] transition-colors cursor-pointer"
                             >
                               <span>{section.title}</span>
-                              <svg
-                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`}
-                                fill="currentColor"
+                              <svg 
+                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`} 
+                                fill="currentColor" 
                                 viewBox="0 0 20 20"
                               >
                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -472,8 +515,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                               <ul className="space-y-1 ml-2 mt-1">
                                 {section.items.map((item) => (
                                   <li key={item.id}>
-                                    <a
-                                      href={item.href}
+                                    <a 
+                                      href={item.href} 
                                       className="block py-1 text-gray-700 hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
                                       onClick={(e) => {
                                         e.preventDefault();
@@ -499,9 +542,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                       className="w-full flex items-center justify-between py-3 text-left text-gray-900 hover:text-[#00B9B9] transition-colors cursor-pointer"
                     >
                       <span className="font-medium">About</span>
-                      <svg
-                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('about') ? 'rotate-180' : ''}`}
-                        fill="currentColor"
+                      <svg 
+                        className={`w-5 h-5 text-[#00B9B9] transition-transform ${openDropdowns.has('about') ? 'rotate-180' : ''}`} 
+                        fill="currentColor" 
                         viewBox="0 0 20 20"
                       >
                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -516,9 +559,9 @@ const Navbar: React.FC<NavbarProps> = () => {
                               className="w-full flex items-center justify-between py-2 text-left text-[#00B9B9] font-semibold text-sm hover:text-[#00B9B9] transition-colors cursor-pointer"
                             >
                               <span>{section.title}</span>
-                              <svg
-                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`}
-                                fill="currentColor"
+                              <svg 
+                                className={`w-4 h-4 text-[#00B9B9] transition-transform ${openSubDropdowns.has(section.id) ? 'rotate-180' : ''}`} 
+                                fill="currentColor" 
                                 viewBox="0 0 20 20"
                               >
                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -528,8 +571,8 @@ const Navbar: React.FC<NavbarProps> = () => {
                               <ul className="space-y-1 ml-2 mt-1">
                                 {section.items.map((item) => (
                                   <li key={item.id}>
-                                    <a
-                                      href={item.href}
+                                    <a 
+                                      href={item.href} 
                                       className="block py-1 text-gray-700 hover:text-[#00B9B9] transition-colors text-sm cursor-pointer"
                                       onClick={(e) => {
                                         e.preventDefault();
@@ -551,9 +594,9 @@ const Navbar: React.FC<NavbarProps> = () => {
 
                   {/* Simple Navigation Links */}
                   {mainNavigationLinks.map((link) => (
-                    <a
+                    <a 
                       key={link.id}
-                      href={link.href}
+                      href={link.href} 
                       className="block py-3 text-gray-900 hover:text-[#00B9B9] transition-colors cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault();
