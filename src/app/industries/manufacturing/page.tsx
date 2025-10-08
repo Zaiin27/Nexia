@@ -9,9 +9,9 @@ const ManufacturingPage = () => {
     ];
 
     const paragraphs = [
-        "Our manufacturing industry expertise encompasses the full spectrum of services needed to support modern manufacturing operations, from cost accounting to supply chain optimization.",
-        "We understand the unique challenges facing manufacturers, including inventory management, production cost control, regulatory compliance, and global supply chain complexities. Our specialized services help manufacturers maintain profitability while meeting quality and environmental standards.",
-        "From automotive and aerospace to food production and consumer goods, our manufacturing specialists provide tailored solutions including cost accounting, tax planning, and operational advisory services that drive efficiency and growth."
+        "The manufacturing industry is navigating a rapidly evolving landscape characterised by global supply chain disruptions, rising production costs and increasing regulatory demands. Professional accountants and advisory professionals are integral to the success of manufacturing businesses.",
+        "Nexia’s members provide tailored financial solutions to the manufacturing industry, addressing its unique complexities. These services include cost accounting, inventory management, financial reporting and tax compliance to optimise operational efficiency. By leveraging deep industry knowledge, we assist manufacturers in analysing production costs, managing raw material and finished goods inventories and streamlining financial operations to ensure regulatory adherence.",
+        "In addition, Nexia’s member firms support strategic decision-making through advisory services, including budgeting, forecasting and financial modelling. We assist in navigating challenges such as supply chain disruptions, capital investments and international tax regulations."
     ];
 
     const featuredContent = [
@@ -40,12 +40,7 @@ const ManufacturingPage = () => {
             breadcrumbs={breadcrumbs}
             paragraphs={paragraphs}
             featuredContent={featuredContent}
-            author={{
-                name: "Manufacturing Industry Team",
-                title: "Manufacturing Specialists",
-                company: "Nexia International",
-                image: "/api/placeholder/96/96"
-            }}
+            
         />
     );
 };

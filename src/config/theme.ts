@@ -7,6 +7,7 @@ export const theme = {
         primary: process.env.NEXT_PUBLIC_PRIMARY_COLOR || '#00B9B9',
         primaryDark: process.env.NEXT_PUBLIC_PRIMARY_DARK || '#008B8B',
         primaryLight: process.env.NEXT_PUBLIC_PRIMARY_LIGHT || '#20C9C9',
+        Light: process.env.NEXT_PUBLIC_PRIMARY_LIGHT_DARK || '#00323C',
 
         // Secondary colors
         secondary: process.env.NEXT_PUBLIC_SECONDARY_COLOR || '#F59E0B',

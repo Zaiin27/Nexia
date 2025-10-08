@@ -9,9 +9,9 @@ const MiningPage = () => {
     ];
 
     const paragraphs = [
-        "Our expertise in mining, natural resources, and renewable energy sectors provides comprehensive solutions for companies operating in these capital-intensive and highly regulated industries.",
-        "We understand the complex challenges of resource extraction, environmental compliance, and the transition to renewable energy. Our specialized services help companies navigate regulatory requirements while optimizing operations and managing risk.",
-        "From traditional mining operations to renewable energy projects, our specialists deliver tailored accounting, tax, and advisory services that support sustainable growth and operational excellence in these critical sectors."
+        "The mining, natural resources & renewable energy sectors are at the forefront of meeting global demands for essential materials and energy, while navigating increasing pressures around sustainability, environmental responsibility and social accountability.",
+        "From exploration and extraction to processing and utilisation, these industries play a pivotal role in supporting economic development and technological advancement, even as they face complex regulatory and operational challenges.",
+        "Our team of experienced professionals provides tailored guidance to help businesses thrive in this evolving landscape. Leveraging deep sector expertise, we focus on enhancing operational efficiencies, addressing sustainability concerns and delivering solutions that create value for both our clients and their stakeholders. Whether managing regulatory compliance, optimising resource utilisation, or integrating renewable energy strategies, we are dedicated to helping you meet the demands of today while preparing for the opportunities of tomorrow."
     ];
 
     const featuredContent = [

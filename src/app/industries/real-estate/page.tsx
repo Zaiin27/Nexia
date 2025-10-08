@@ -9,9 +9,9 @@ const RealEstatePage = () => {
     ];
 
     const paragraphs = [
-        "Our real estate industry expertise spans the entire property lifecycle, from development and acquisition through management and disposition.",
-        "We work with real estate developers, property management companies, REITs, and real estate investment firms to provide specialized accounting, tax, and advisory services. Our deep understanding of real estate transactions and regulations enables us to deliver solutions that optimize returns and ensure compliance.",
-        "From residential and commercial development to industrial and hospitality properties, our real estate specialists provide comprehensive services including transaction advisory, tax planning, and regulatory compliance that support success in the dynamic real estate market."
+        "The real estate industry operates within a constantly shifting landscape shaped by regulatory reforms, societal trends and environmental challenges. These dynamics require businesses to adopt forward-thinking approaches, ensuring their investments align with current demands while anticipating future opportunities.",
+        "Nexia’s professional service advisors play a critical role in this journey, offering deep industry expertise and insights that empower organizations to navigate complexities, mitigate risks, and capitalize on emerging trends effectively.",
+        "Nexia’s global real estate advisors provide unparalleled guidance and innovative solutions tailored to the multifaceted needs of the real estate industry. From navigating regulatory requirements to leveraging advanced technical strategies, we deliver comprehensive, results-driven support designed to optimise your investment decisions. With a commitment to excellence and a forward-looking perspective, we help our clients stay ahead in a competitive and evolving market."
     ];
 
     const featuredContent = [

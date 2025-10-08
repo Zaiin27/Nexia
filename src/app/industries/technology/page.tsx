@@ -9,9 +9,8 @@ const TechnologyPage = () => {
     ];
 
     const paragraphs = [
-        "Our technology industry expertise helps innovative companies navigate the complex landscape of digital transformation, intellectual property, and rapid growth.",
-        "We work with startups, scale-ups, and established technology companies to provide specialized accounting, tax, and advisory services. Our team understands the unique challenges of the tech sector, including R&D tax credits, stock option accounting, and international expansion.",
-        "From software development and AI companies to fintech and cybersecurity firms, our technology specialists deliver solutions that support innovation, growth, and compliance in the fast-paced technology ecosystem."
+        "The technology industry serves as a driving force behind innovation, enabling transformation across all sectors of the economy. With rapid advancements in areas like artificial intelligence, cloud computing, connectivity, clean energy and mobility, technology providers face growing demands to deliver cutting-edge solutions.",
+        "At Nexia, we understand the fast-paced and innovative environment in which technology companies operate. Our comprehensive range of services is designed to support your growth and help you stay ahead in a rapidly evolving market. From navigating complex regulatory landscapes to optimizing operations and unlocking market potential, we partner with you to harness opportunities, overcome challenges, and establish your business as a leader in this transformative industry."
     ];
 
     const featuredContent = [

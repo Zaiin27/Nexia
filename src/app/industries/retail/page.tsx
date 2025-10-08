@@ -9,9 +9,9 @@ const RetailPage = () => {
     ];
 
     const paragraphs = [
-        "Our retail industry expertise helps businesses navigate the evolving landscape of consumer commerce, from traditional brick-and-mortar operations to e-commerce and omnichannel retailing.",
-        "We understand the unique challenges facing retailers, including inventory management, seasonal fluctuations, digital transformation, and changing consumer behaviors. Our specialized services help retail businesses optimize operations, manage costs, and drive growth.",
-        "From fashion and electronics to food and specialty retail, our retail specialists provide comprehensive solutions including inventory accounting, tax planning, and digital transformation advisory that support success in the competitive retail marketplace."
+        "The retail industry is undergoing a transformative evolution, driven by the rise of online selling, omnichannel strategies and advanced automation. As the boundaries between physical and digital retail continue to blur, consumer expectations are reaching new heights.",
+        "This industry’s dynamic nature not only fuels economic growth but also demands that businesses stay agile, adaptive and innovative to remain competitive in a rapidly shifting landscape.",
+        "At Nexia, we specialise in equipping retail businesses with the expertise and strategies needed to thrive in this ever-changing environment. From navigating complex market conditions and capitalising on emerging consumer trends to ensuring compliance with regulatory requirements, our team delivers tailored solutions that support your success. With a proactive and flexible approach, we help you harness the opportunities of a fast-paced industry while securing a strong foundation for sustainable growth."
     ];
 
     const featuredContent = [
