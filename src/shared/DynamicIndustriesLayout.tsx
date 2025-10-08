@@ -2,9 +2,7 @@
 import { usePathname } from 'next/navigation';
 import IndustryHeader from "@/shared/IndustryHeader";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import RelatedInsights from "@/shared/RelatedInsights";
 import BackToTop from "@/shared/BackToTop";
-import { relatedInsightsData } from "@/data/relatedInsights";
 import { industriesData, industriesMobileData } from "@/utils/constants";
 
 const getIndustryNameFromPath = (pathname: string) => {
@@ -135,9 +133,6 @@ export default function DynamicIndustriesLayout({ children }: DynamicIndustriesL
                 </div>
             </div>
 
-            {/* Related Insights Section */}
-            <div className="w-full border-b border-gray-200 bg-gray-100"></div>
-            <RelatedInsights insights={relatedInsightsData} />
             <BackToTop />
         </div>
     );

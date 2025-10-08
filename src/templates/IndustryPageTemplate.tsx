@@ -1,4 +1,5 @@
 import React from 'react';
+import IndustriesGrid from '@/shared/IndustriesGrid';
 
 interface IndustryPageTemplateProps {
     breadcrumbs: Array<{ label: string; href?: string }>;
@@ -24,82 +25,43 @@ const IndustryPageTemplate: React.FC<IndustryPageTemplateProps> = ({
     author
 }) => {
     return (
-        <div className="max-w-4xl md:-mt-10">
+        <div>
             {/* Main Content */}
-            <div className="space-y-8">
-                {/* Content Paragraphs */}
-                {paragraphs.map((paragraph, index) => (
-                    <div key={index} className="mb-6">
-                        <p className={`leading-relaxed ${index === 0
-                            ? 'text-2xl text-gray-800 font-semibold mb-4'
-                            : 'text-base text-gray-800'
-                            }`}>
-                            {paragraph}
+            <div className="max-w-3xl md:-mt-10">
+                <div className="space-y-8">
+                    {/* Large Heading - First Paragraph as Main Heading */}
+                    <div className="mb-8">
+                        <h1 className="text-xl lg:text-2xl font-medium text-gray-900 leading-8 mb-6">
+                            {paragraphs[0]}
+                        </h1>
+                    </div>
+
+                    {/* Content Paragraphs */}
+                    {paragraphs.slice(1).map((paragraph, index) => (
+                        <div key={index} className="mb-6">
+                            <p className="text-base text-gray-700 leading-6">
+                                {paragraph}
+                            </p>
+                        </div>
+                    ))}
+
+                    {/* Contact Information */}
+                    <div className="border-gray-200">
+                        <p className="text-base text-gray-700">
+                            For more information, please contact{' '}
+                            <a 
+                                href="mailto:advisory@nexia.com" 
+                                className="text-teal-500 hover:text-teal-600 font-medium"
+                            >
+                                advisory@nexia.com
+                            </a>
                         </p>
                     </div>
-                ))}
-
-                {/* Featured Content Section */}
-                {featuredContent.length > 0 && (
-                    <div className="mt-12">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Featured Content</h2>
-                        <div className="grid gap-6 md:grid-cols-2">
-                            {featuredContent.map((content, index) => (
-                                <div key={index} className="bg-gray-50 rounded-lg p-6">
-                                    {content.image && (
-                                        <div className="mb-4">
-                                            <img
-                                                src={content.image}
-                                                alt={content.title}
-                                                className="w-full h-48 object-cover rounded-md"
-                                            />
-                                        </div>
-                                    )}
-                                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                                        {content.title}
-                                    </h3>
-                                    <p className="text-gray-700 mb-4">
-                                        {content.description}
-                                    </p>
-                                    {content.link && (
-                                        <a
-                                            href={content.link}
-                                            className="inline-flex items-center text-teal-600 hover:text-teal-700 font-medium"
-                                        >
-                                            Read More
-                                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </a>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* Author Section */}
-                {author && (
-                    <div className="mt-12 bg-gray-50 rounded-lg p-6">
-                        <h2 className="text-2xl font-semibold text-gray-900 mb-6">About the Author</h2>
-
-                        <div className="flex items-start space-x-4">
-                            {author.image && (
-                                <img
-                                    src={author.image}
-                                    alt={author.name}
-                                    className="w-16 h-16 rounded-full object-cover"
-                                />
-                            )}
-                            <div>
-                                <h3 className="text-lg font-semibold text-gray-900">{author.name}</h3>
-                                <p className="text-gray-700 font-medium">{author.title}</p>
-                                <p className="text-gray-600">{author.company}</p>
-                            </div>
-                        </div>
-                    </div>
-                )}
+                </div>
             </div>
+
+            {/* Industries Grid Section - Full Width */}
+            <IndustriesGrid />
         </div>
     );
 };

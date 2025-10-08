@@ -9,9 +9,9 @@ const FinancialServicePage = () => {
     ];
 
     const paragraphs = [
-        "Our financial services expertise encompasses a comprehensive range of specialized services tailored to meet the complex regulatory and operational needs of financial institutions.",
-        "We work with banks, investment firms, insurance companies, and other financial services providers to deliver audit, tax, and advisory services that ensure compliance while optimizing performance. Our deep understanding of financial regulations and market dynamics enables us to provide strategic guidance that drives growth.",
-        "From regulatory compliance and risk management to digital transformation and ESG reporting, our financial services specialists help institutions navigate the evolving landscape of the financial industry with confidence and strategic insight."
+        "In the fast-paced and highly regulated financial services industry, our professionals provide indispensable support to firms navigating complex financial landscapes.",
+        "Nexia member expertise spans financial reporting, compliance and audit services, ensuring that clients meet stringent regulatory standards while maintaining operational efficiency. By offering tailored solutions for areas such as risk management, tax strategy and capital optimisation, we enable financial institutions to strengthen their financial health and enhance stakeholder confidence.",
+        "Through advisory services, we provide insights into market trends, assist with mergers and acquisitions and support the adoption of advanced technologies like blockchain and AI. Nexia members also deliver expertise in implementing financial systems that streamline processes and enhance data-driven decision-making."
     ];
 
     const featuredContent = [

@@ -9,9 +9,9 @@ const ConstructionPage = () => {
     ];
 
     const paragraphs = [
-        "Our construction industry expertise spans the entire project lifecycle, from initial planning and financing through project completion and ongoing operations.",
-        "We understand the unique challenges facing construction companies, including complex project accounting, compliance requirements, and cash flow management. Our specialized services help construction firms maintain profitability while meeting regulatory standards.",
-        "Our global network of construction industry specialists provides tailored solutions including project cost accounting, contract compliance, tax planning, and risk management strategies that are essential for success in today's competitive construction market."
+        "The construction industry is currently navigating a dynamic and challenging environment. Professional accountants and advisory professionals play a vital role in empowering construction businesses to thrive in any economic landscape.",
+        "Nexia’ members deliver specialised financial services to the construction industry, addressing its unique challenges such as project-based accounting, complex contract management and fluctuating cash flows. Our expertise includes cost accounting, job costing and compliance with revenue recognition standards. By providing accurate financial reporting and ensuring adherence to tax regulations, we help construction firms maintain financial stability and mitigate risks throughout project lifecycles.",
+        "Our advisory services include strategic planning, operational efficiency, budgeting, forecasting, financial modelling, and expertise in construction-specific technologies to optimize resource allocation, monitor performance, and enhance profitability. We work closely with construction firms to implement best practices and innovative solutions that drive sustainable growth."
     ];
 
     const featuredContent = [
