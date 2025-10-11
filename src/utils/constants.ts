@@ -876,3 +876,48 @@ export const industries: Industry[] = [
     image: 'https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/07/new-york-united-states-of-america-1024x672.jpg'
   }
 ]
+
+// About Content Data
+export interface AboutContentItem {
+  id: number;
+  type: 'heading' | 'paragraph' | 'quote';
+  content: string;
+}
+
+export const historyContent: AboutContentItem[] = [
+  {
+    id: 1,
+    type: 'heading',
+    content: "Nexia's history dates back to the 1960s when two top-five accounting firms from London and New York began collaborating by referring clients and forming a network called S&O International."
+  },
+  {
+    id: 2,
+    type: 'paragraph',
+    content: "In the 1970s, the network expanded based on the \"one country, one firm\" principle, primarily generating income from the UK and US markets."
+  },
+  {
+    id: 3,
+    type: 'paragraph',
+    content: "The name \"Nexia\" was adopted after a merger with Neville Russell International."
+  },
+  {
+    id: 4,
+    type: 'paragraph',
+    content: "The Nexia name is derived from the Latin term, \"nexus\", meaning something that binds, connects or links."
+  },
+  {
+    id: 5,
+    type: 'paragraph',
+    content: "Our name and interlinking \"carabiners\" symbol signify connection and corresponds with our value proposition:"
+  },
+  {
+    id: 6,
+    type: 'quote',
+    content: "When you choose Nexia, you get a more responsive, more personal, partner-led service that delivers exactly what you need, wherever you need it."
+  },
+  {
+    id: 7,
+    type: 'paragraph',
+    content: "Today, Nexia International is a leading global network of independent accounting and consulting firms, providing audit, tax, and advisory services to clients around the world."
+  }
+];
